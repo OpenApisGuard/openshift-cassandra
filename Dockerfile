@@ -9,6 +9,8 @@ ENV CASSANDRA_VERSION="3.11.1" \
     PATH="/opt/apache-cassandra/bin:$PATH" 
 
 #USER root
+RUN adduser openapiroot root
+USER openapiroot
 
 RUN yum install -y -q bind-utils && \
    yum clean all
